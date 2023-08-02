@@ -1,5 +1,7 @@
 #版本
 OPENRESTY_VERSION=1.21.4.2
+#外漏端口
+OPENRESTY_PORT=80
 #定义基础路径
 BASE_PATH=/Users/lixinhan/Desktop/docker/openresty
 #容器名称
@@ -19,7 +21,7 @@ docker rm -f ${CONTAINER_NAME}
 docker run \
 -d \
 --name ${CONTAINER_NAME} \
--p 80:80 \
+-p ${OPENRESTY_PORT}:80 \
 -v ${BASE_PATH}/conf/:/etc/nginx/conf.d/ \
 -v ${BASE_PATH}/log/:/usr/local/openresty/nginx/logs/ \
 --restart=always \
