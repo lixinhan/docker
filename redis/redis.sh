@@ -11,4 +11,5 @@ docker run \
 -d \
 --name ${CONTAINER_NAME} \
 -p ${REDIS_PORT}:6379 \
+--restart=always \
 ${IMAGE_NAME}
